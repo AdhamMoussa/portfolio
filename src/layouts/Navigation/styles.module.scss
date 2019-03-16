@@ -1,0 +1,100 @@
+@import "../../styles/main.scss";
+
+.navigation {
+    background-color: #000;
+    bottom: 0;
+    color: $color-gray;
+    max-width: 960px;
+    overflow: auto;
+    position: fixed;
+    right: 0;
+    top: 0;
+    transform: translateX(100%);
+    transition: 0.25s;
+    width: 50%;
+    z-index: 100000;
+
+    &Visible {
+        transform: translateX(0);
+    }
+}
+
+.inner {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: space-between;
+    padding: 8rem 2rem 4rem;
+
+    @include smallUp {
+        padding: 8rem 6rem 4rem;
+    }
+}
+
+.listItem {
+    display: block;
+    font-size: 2rem;
+    font-weight: 700;
+    width: fit-content;
+
+    @include smallUp {
+        font-size: 2.25rem;
+    }
+
+    &:not(:last-child) {
+        margin-bottom: 1.2rem;
+    }
+
+    &:hover {
+        color: #fff;
+    }
+
+    &Active {
+        color: $color-primary;
+    }
+}
+
+.socialLinks {
+    margin-bottom: 1rem;
+
+    a {
+        font-size: 1.25rem;
+
+        @include smallUp {
+            font-size: 1.5rem;
+        }
+
+        &:not(:last-child) {
+            margin-right: 1rem;
+
+            @include smallUp {
+                margin-right: 0.7rem;
+            }
+        }
+
+        &:hover {
+            color: $color-primary;
+        }
+    }
+}
+
+.closeIcon {
+    cursor: pointer;
+    height: 30px;
+    position: absolute;
+    right: 20%;
+    top: 4rem;
+    width: 30px;
+
+    .firstLine {
+        background-color: #fff;
+        height: 1px;
+        transform: rotate(45deg);
+    }
+
+    .secondLine {
+        background-color: #fff;
+        height: 1px;
+        transform: rotate(-45deg);
+    }
+}

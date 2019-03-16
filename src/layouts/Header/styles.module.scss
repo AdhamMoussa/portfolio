@@ -1,0 +1,94 @@
+@import "../../styles/main.scss";
+
+.header {
+    left: 0;
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: 1rem 0;
+    position: fixed;
+    right: 0;
+    top: 0;
+    transition: 0.5s;
+    width: 100%;
+    z-index: 1000;
+
+    @include smallUp {
+        padding: 1.5rem 0;
+    }
+
+    @include mediumUp {
+        padding: 2rem 0;
+    }
+}
+
+.wrapper {
+    @include wrapper;
+}
+
+.headerInner {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(10px);
+    transition: 0.5s;
+}
+
+.logo {
+    h1 {
+        font-size: 2rem;
+        font-weight: bold;
+        margin: 0;
+
+        @include mediumUp {
+            font-size: 2.5rem;
+        }
+    }
+}
+
+.menuIconContainer {
+    align-items: center;
+    cursor: pointer;
+    display: flex;
+
+    & > span {
+        display: block;
+        font-size: 0.7rem;
+        line-height: 1;
+        margin-right: 1rem;
+        text-transform: uppercase;
+
+        @include mediumUp {
+            font-size: 1rem;
+        }
+    }
+}
+
+.menuIcon {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    height: 19px;
+    justify-content: space-between;
+
+    @include mediumUp {
+        height: 22px;
+    }
+
+    div {
+        background-color: $font-primary-color;
+        height: 2px;
+        width: 30px;
+
+        @include mediumUp {
+            width: 35px;
+        }
+    }
+}
+
+.header--solid {
+    background-color: $color-gray-dark;
+    box-shadow: 0px 0px 1px 0px #000000;
+    .header__inner {
+        transform: translateY(0);
+    }
+}
